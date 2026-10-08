@@ -30,7 +30,7 @@ pipeline {
         stage("Deploy / Run"){
             steps{
                 echo 'Levantando el servidor en el puerto 3000...'
-                sh 'BUILD_ID=dontKillMe nohup npm start > server.log 2>&1 &'
+                sh 'JENKINS_NODE_COOKIE=dontKillMe nohup npm start > server.log 2>&1 &'
             }
         }
     }
