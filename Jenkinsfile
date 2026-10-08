@@ -20,14 +20,14 @@ pipeline {
             }
         }
 
-        stage{Build Project}{
+        stage{"Build Project"}{
             steps{
                 echo 'Compilando Typescript a Javascript'
                 sh 'npm run build'
             }
         }
 
-        stage{Deploy / Run}{
+        stage{"Deploy / Run"}{
             steps{
                 echo 'Levantando el servidor en el puerto 3000...'
                 sh 'BUILD_ID=dontKillMe nohup npm start > server.log 2>&1 &'
